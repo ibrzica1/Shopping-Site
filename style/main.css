@@ -7,6 +7,7 @@
 .header-container{
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 120px;
   width: 100%;
 }
@@ -18,17 +19,26 @@
 }
 .search-container {
   flex: 1;
+  max-width: 850px;
   display: flex;
   align-items: center;
+  
 }
 .search-container input {
   width: 100%;
-  padding: 8px;
+  padding: 12px;
   font-size: 16px;
   border-radius: 24px;
   border: 4px solid rgb(61, 69, 177);
-  color: rgb(216, 115, 0);
+  color: black;
+  font-size: 18px;
   
+  
+}
+
+.search-container input:focus{
+  border: 4px solid rgb(255, 153, 0);
+  outline: none;
 }
 .cart-container img {
   height: 70px;
@@ -39,4 +49,87 @@
   width: 100%;
   min-height: 100vh;
   background: linear-gradient(180deg, #3717c2, #eb8b3d);
+  display: grid;
+  grid-template-columns: repeat(7,1fr);
+}
+@media (max-width: 2000px) {
+  #productsGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  #productsGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 1300px) {
+  #productsGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 1000px) {
+  #productsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 800px) {
+  #productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 575px) {
+  #productsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 450px) {
+  #productsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.product-container{
+  padding-top: 40px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  background-color: white;
+  border: 4px solid orange;
+  border-radius: 6px;
+}
+.product-image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 180px;
+}
+.product-image-container img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.product-name {
+  height: 40px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: 400;
+}
+.product-price {
+  font-weight: 700;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+#js-add-to-cart {
+  width: 100%;
+  padding: 8px;
+  border-radius: 50px;
+  border: none;
+  background-color: orange;
+  color: #3717c2;
+  font-size: 16px;
+  font-weight: 700;
 }
