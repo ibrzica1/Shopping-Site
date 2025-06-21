@@ -5,6 +5,7 @@ import { formatCurrency } from "../utils/money.js";
 const productsGrid = document.getElementById("productsGrid");
 const searchInput = document.getElementById("searchInput");
 const category = document.getElementById("category");
+const sortPrice = document.getElementById("sortPrice");
 
 function renderProductsGrid(array) {
   let productsGridHTML = "";
@@ -28,6 +29,7 @@ function filterProducts(){
   let categorised = [];
   const inputTerm = searchInput.value.toLowerCase().trim();
   const categories = category.value;
+  
   products.forEach(product => {
     if(product.name.toLowerCase().includes(inputTerm)){
       sorted.push(product)
@@ -40,11 +42,26 @@ function filterProducts(){
     else if (categories === product.category) {
       categorised.push(product);
     }
-  })
-  renderProductsGrid(categorised);
+  });
+
+  if(sortPrice.value === "highest")
+  {
+    categorised = categorised.sort((a,b) => b.priceCents - a.priceCents);
+    renderProductsGrid(categorised);
+  }
+  else if (sortPrice.value === "lowest")
+  {
+    categorised = categorised.sort((a,b) => a.priceCents - b.priceCents);
+    renderProductsGrid(categorised);
+  }
+  else{
+    renderProductsGrid(categorised);
+  }
+  
 }
 
 filterProducts()
 
 searchInput.addEventListener("input",filterProducts);
 category.addEventListener("change",filterProducts);
+sortPrice.addEventListener("change",filterProducts)

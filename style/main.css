@@ -44,6 +44,7 @@
   padding-right: 10px;
   border: 4px solid rgb(61, 69, 177);
   border-left: none;
+  
   color: orange;
   font-size: 18px;
   font-weight: 500;
@@ -60,31 +61,26 @@
   cursor: pointer;
   background-color: rgb(50, 57, 146);
 }
-#search-button{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+#sortPrice{
   height: 56px;
-  padding: 16px;
-  border: 4px solid rgb(61, 69, 177);
+  padding: 12px;
+  padding-right: 10px;
+  border: 4px solid orange;
+  background-color: orange;
+  border-left: none;
   border-top-right-radius: 24px;
   border-bottom-right-radius: 24px;
-  border-left: none;
-  background-color: orange;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(50, 57, 146);
 }
-#search-button:hover{
-  cursor: pointer;
-  background-color: #ff7300;
-}
-#search-button img {
-  width: 26px;
+#sortPrice:focus{
+  outline: none;
 }
 .cart-container img {
   height: 70px;
   margin-left: 50px;
   margin-right: 20px;
-  
-
 }
 #productsGrid{
   width: 100%;
@@ -139,6 +135,7 @@
   background-color: white;
   border: 4px solid orange;
   border-radius: 6px;
+  max-height: 450px;
 }
 .product-image-container{
   display: flex;
