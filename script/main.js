@@ -1,4 +1,5 @@
 import { products } from "../data/products.js";
+import { formatCurrency } from "../utils/money.js";
 
 
 const productsGrid = document.getElementById("productsGrid");
@@ -22,6 +23,3 @@ function renderProductsGrid(array) {
 
 renderProductsGrid(products);
 
-function formatCurrency(cents){
-  return(Math.round(cents)/100).toFixed(2);
-}
