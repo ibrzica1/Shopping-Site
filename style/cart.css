@@ -1,0 +1,33 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Segoe UI;
+  box-sizing: border-box;
+}
+.cart-main-container{
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cart-header-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  margin-bottom: 50px;
+
+}
+.cart-header-container h2 span{
+  color: rgb(90, 90, 255);
+}
+.cart-logo-image{
+  height: 120px;
+  width: 120px;
+}
+.search-lock-img{
+  margin-right: 30px;
+}

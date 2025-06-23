@@ -1,11 +1,13 @@
 import { products } from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";
+import { addToCart, cart } from "./cart.js";
 
 
 const productsGrid = document.getElementById("productsGrid");
 const searchInput = document.getElementById("searchInput");
 const category = document.getElementById("category");
 const sortPrice = document.getElementById("sortPrice");
+const jsAddToCart = document.getElementById("js-add-to-cart");
 
 function renderProductsGrid(array) {
   let productsGridHTML = "";
@@ -17,7 +19,7 @@ function renderProductsGrid(array) {
       </div>
       <div class="product-name">${product.name}</div>
       <div class="product-price">$${formatCurrency(product.priceCents)}</div>
-      <button id="js-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
+      <button button-primary id="js-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
     </div>
     `
   });
@@ -64,4 +66,12 @@ filterProducts()
 
 searchInput.addEventListener("input",filterProducts);
 category.addEventListener("change",filterProducts);
-sortPrice.addEventListener("change",filterProducts)
+sortPrice.addEventListener("change",filterProducts);
+document.querySelectorAll('#js-add-to-cart').forEach(button => {
+  button.addEventListener("click",()=>{
+    const productId = button.dataset.productId;
+    console.log(productId);
+    addToCart(productId,1);
+  })
+})
+

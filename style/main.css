@@ -17,6 +17,9 @@
   margin-right: 50px;
   margin-left: 10px;
 }
+.logo-container img:hover{
+  cursor: pointer;
+}
 .search-container {
   flex: 1;
   max-width: 800px;
@@ -77,10 +80,35 @@
 #sortPrice:focus{
   outline: none;
 }
+#sortPrice:hover{
+  cursor: pointer;
+  background-color: #eb8b3d;
+  border: 4px solid #eb8b3d;
+  border-left: none;
+}
+.cart-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 140px;
+}
+.cart-container:hover{
+  cursor: pointer;
+}
 .cart-container img {
   height: 70px;
-  margin-left: 50px;
+  margin-left: 20px;
   margin-right: 20px;
+}
+#cartCounter{
+  position: absolute;
+  top: 16px;
+  left: 70px;
+  font-size: 22px;
+  font-weight: 500;
+  color: red;
 }
 #productsGrid{
   width: 100%;
@@ -171,4 +199,8 @@
   color: #3717c2;
   font-size: 18px;
   font-weight: 700;
+}
+#js-add-to-cart:hover{
+  cursor: pointer;
+  background-color: #eb8b3d;
 }

@@ -7,9 +7,9 @@
   <body>
     <div class="main-container">
       <div class="header-container">
-        <div class="logo-container">
+        <a class="logo-container" href="main.html">
           <img src="/images/shop-logo.png">
-        </div>
+        </a>
         <div class="search-container">
           <input id="searchInput" type="text" placeholder="Search">
           <select id="category">
@@ -29,9 +29,10 @@
             <option value="lowest">Lowest</option>
           </select>
         </div>
-        <div class="cart-container">
+        <a class="cart-container" href="cart.html">
           <img src="/images/cart.png">
-        </div>
+          <div id="cartCounter">0</div>
+        </a>
       </div>
       
       <div id="productsGrid"></div>
