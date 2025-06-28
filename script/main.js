@@ -1,6 +1,6 @@
 import { products } from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-import { addToCart, cart } from "./cart.js";
+import { addToCart, cart, cartProductsCount } from "./cart.js";
 
 
 const productsGrid = document.getElementById("productsGrid");
@@ -8,6 +8,7 @@ const searchInput = document.getElementById("searchInput");
 const category = document.getElementById("category");
 const sortPrice = document.getElementById("sortPrice");
 const jsAddToCart = document.getElementById("js-add-to-cart");
+
 
 function renderProductsGrid(array) {
   let productsGridHTML = "";
@@ -75,3 +76,4 @@ document.querySelectorAll('#js-add-to-cart').forEach(button => {
   })
 })
 
+cartProductsCount(cart);

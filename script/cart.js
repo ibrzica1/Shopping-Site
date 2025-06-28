@@ -2,6 +2,7 @@ import { products } from "../data/products.js";
 
 const cartProductsGrid = document.getElementById("cartProductsGrid");
 const cartOrdersGrid = document.getElementById("cartOrdersGrid");
+const cartCounter = document.getElementById("cartCounter");
 
 
 export let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -20,4 +21,14 @@ export function addToCart(productId,number){
 
   localStorage.setItem("cartItems", JSON.stringify(cart));
   console.log(cart);
+  cartProductsCount(cart);
 }
+
+export function cartProductsCount(array) {
+  let count = 0;
+  array.forEach(product => {
+    count += product.quantity;
+  });
+  cartCounter.innerHTML = count;
+}
+cartProductsCount(cart);
