@@ -33,6 +33,7 @@
 }
 .cart-body-container{
   display: flex;
+  justify-content: space-between;
 }
 .cart-product-container{
   padding-top: 40px;
@@ -70,4 +71,27 @@
   margin-top: 15px;
   margin-bottom: 15px;
   color: green;
+}
+#cartTotalContainer{
+  width: 500px;
+  height: 384px;
+  margin-top: 10px;
+  margin-left: 20px;
+  border: 1px solid black;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+.order-items-container{
+  display: flex;
+  justify-content: space-between;
+}
+.order-items-total {
+  display: flex;
+  justify-content: space-between;
+  color: red;
+  font-size: 20px;
+  font-weight: 500;
 }

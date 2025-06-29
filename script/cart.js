@@ -31,12 +31,12 @@ export function cartProductsCount(array) {
     count += product.quantity;
   });
   cartCounter.innerHTML = count;
+  return count;
 }
 cartProductsCount(cart);
 
 function renderCartProductsGrid(array) {
     cartProductsGrid.innerHTML = "";
-
 
   array.forEach(product => {
     const matchingProduct = products.find(item => item.id === product.productId);
@@ -51,6 +51,27 @@ function renderCartProductsGrid(array) {
           </div>
     `;
   })
+
 }
 renderCartProductsGrid(cart);
+
+function renderTotalSummary(array) {
+  cartTotalContainer.innerHTML = "";
+  let total = 0;
+  let tax = 0;
+  array.forEach(product => {
+    const matchingProduct = products.find(item => item.id === product.productId);
+    total += (matchingProduct.priceCents * product.quantity);
+  })
+  
+  tax = (total*10)/100;
+  cartTotalContainer.innerHTML = `
+    <h2>Order Summary</h2>
+    <div class="order-items-container"><p>Items(${cartProductsCount(cart)}):</p><p>$${formatCurrency(total)}</p></div>
+    <div class="order-items-container"><p>Estimated tax (10%):</p><p>$${formatCurrency(tax)}</p></div>
+    <div class="order-items-total"><p>Order total:</p><p>$${formatCurrency(total+ tax)}</p></div>
+  `;
+}
+renderTotalSummary(cart);
+
 
