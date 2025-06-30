@@ -41,19 +41,40 @@ function renderCartProductsGrid(array) {
   array.forEach(product => {
     const matchingProduct = products.find(item => item.id === product.productId);
     cartProductsGrid.innerHTML += `
-      <div class="cart-product-container">
+      <div class="cart-product-container"
+      id="js-cart-product-container-${matchingProduct.id}">
             <div class="cart-product-image-container">
             <img src="${matchingProduct.image}">
             </div>
             <div class="cart-product-name">${matchingProduct.name}</div>
             <div class="cart-product-price">$${formatCurrency(matchingProduct.priceCents)}</div>
             <div class="cart-product-quantity">Quantity: ${product.quantity} </div>
+            <div class="cart-product-update">
+            <p class="cart-update-btn"  data-product-id="${matchingProduct.id}">Update</p>
+            <input class="cart-quantity-update" js-cart-quantity-update data-product-id="${matchingProduct.id}"></input>
+            <p class="cart-save-btn" js-cart-save-btn  data-product-id="${matchingProduct.id}">Save</p>
+            <p class="cart-delete-btn"  data-product-id="${matchingProduct.id}">Delete</p>
+            </div>
           </div>
     `;
   })
-
 }
 renderCartProductsGrid(cart);
+
+document.querySelectorAll(".cart-update-btn").forEach(link => {
+  link.addEventListener("click",()=>{
+    const productId = link.dataset.productId;
+    const container = document.querySelector(`#js-cart-product-container-${productId}`);
+    console.log(container)
+    container.classList.add("not-hidden");
+  })
+})
+
+
+
+
+
+
 
 function renderTotalSummary(array) {
   cartTotalContainer.innerHTML = "";
