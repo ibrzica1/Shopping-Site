@@ -103,8 +103,8 @@
   color: blue;
 }
 .cart-update-btn,
-#cartDeleteBtn,
-#cartSaveBtn{
+.cart-delete-btn,
+.cart-save-btn{
   cursor: pointer;
 }
 .cart-quantity-update{
@@ -113,7 +113,7 @@
   display: none;
 }
 .cart-save-btn {
-display: none;
+  display: none;
 }
 #cartQuantityUpdate:focus {
   outline: none;

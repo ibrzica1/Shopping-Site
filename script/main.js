@@ -1,6 +1,6 @@
 import { products } from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";
-import { addToCart, cart, cartProductsCount } from "./cart.js";
+import { cart, addToCart, cartProductsCount } from "./cart-data.js";
 
 
 const productsGrid = document.getElementById("productsGrid");
