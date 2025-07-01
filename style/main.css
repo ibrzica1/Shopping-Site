@@ -163,7 +163,7 @@
   background-color: white;
   border: 4px solid orange;
   border-radius: 6px;
-  max-height: 450px;
+  max-height: 460px;
 }
 .product-image-container{
   display: flex;
@@ -188,6 +188,23 @@
   margin-top: 15px;
   margin-bottom: 15px;
   color: green;
+}
+.product-container select{
+  width: 44px;
+  height: 30px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  
+}
+.product-container select:focus {
+  outline: none;
+  border: 2px solid orange;
+}
+.product-container select option {
+  text-align: center;
 }
 
 #js-add-to-cart {

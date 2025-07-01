@@ -7,7 +7,6 @@ const productsGrid = document.getElementById("productsGrid");
 const searchInput = document.getElementById("searchInput");
 const category = document.getElementById("category");
 const sortPrice = document.getElementById("sortPrice");
-const jsAddToCart = document.getElementById("js-add-to-cart");
 
 
 function renderProductsGrid(array) {
@@ -20,11 +19,30 @@ function renderProductsGrid(array) {
       </div>
       <div class="product-name">${product.name}</div>
       <div class="product-price">$${formatCurrency(product.priceCents)}</div>
+      <select id="js-product-amount-${product.id}">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+      <option>6</option>
+      <option>7</option>
+      <option>8</option>
+      <option>9</option>
+      </select>
       <button button-primary id="js-add-to-cart" data-product-id="${product.id}">Add to Cart</button>
     </div>
     `
   });
   productsGrid.innerHTML = productsGridHTML;
+
+  document.querySelectorAll('#js-add-to-cart').forEach(button => {
+  button.addEventListener("click",()=>{
+    const productId = button.dataset.productId;
+    const amount = document.getElementById(`js-product-amount-${productId}`).value;
+    addToCart(productId,Number(amount));
+  })
+})
 }
 
 function filterProducts(){
@@ -68,12 +86,6 @@ filterProducts()
 searchInput.addEventListener("input",filterProducts);
 category.addEventListener("change",filterProducts);
 sortPrice.addEventListener("change",filterProducts);
-document.querySelectorAll('#js-add-to-cart').forEach(button => {
-  button.addEventListener("click",()=>{
-    const productId = button.dataset.productId;
-    console.log(productId);
-    addToCart(productId,1);
-  })
-})
+
 
 cartProductsCount(cart);
