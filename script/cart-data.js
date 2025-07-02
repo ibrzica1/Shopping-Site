@@ -1,3 +1,5 @@
+import { products } from "../data/products.js";
+
 const cartCounter = document.getElementById("cartCounter");
 
 export let cart = JSON.parse(localStorage.getItem("cartItems")) || [];
@@ -37,4 +39,16 @@ export function modifyCart(productId) {
       })
       cart = newCart;
       localStorage.setItem("cartItems", JSON.stringify(cart));
+}
+
+export function getTotal(array) {
+  let total = 0;
+    let tax = 0;
+    array.forEach(product => {
+      const matchingProduct = products.find(item => item.id === product.productId);
+      total += (matchingProduct.priceCents * product.quantity);
+    })
+    
+    tax = (total*10)/100;
+    return total + tax;
 }

@@ -58,3 +58,8 @@
   font-weight: 500;
   color: red;
 }
+.orders-body-container{
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(180deg, #3717c2, #eb8b3d);
+}
