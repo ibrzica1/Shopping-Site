@@ -91,6 +91,7 @@ function renderTotalSummary(array) {
     <div class="order-items-container"><p>Items(${cartProductsCount(cart)}):</p><p>$${formatCurrency(total)}</p></div>
     <div class="order-items-container"><p>Estimated tax (10%):</p><p>$${formatCurrency(tax)}</p></div>
     <div class="order-items-total"><p>Order total:</p><p>$${formatCurrency(total+ tax)}</p></div>
+    <button id="js-place-order-btn">Place Your Order</button>
   `;
 }
 renderTotalSummary(cart);
