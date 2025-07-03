@@ -14,7 +14,8 @@ export function addToOrders(array) {
     if(!exists) break;
   }
   if(array.length === 0){
-    console.log("Cart is empty")
+    console.log("Cart is empty");
+    return;
   }
   else {
     orders.push({
