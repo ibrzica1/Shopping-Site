@@ -1,5 +1,6 @@
 import { products } from "../data/products.js";
 import { formatCurrency } from "../utils/money.js";import { cart, cartProductsCount,modifyCart } from "./cart-data.js";
+import { addToOrders } from "./orders-data.js";
 
 const cartProductsGrid = document.getElementById("cartProductsGrid");
 const cartTotalContainer = document.getElementById("cartTotalContainer");
@@ -93,6 +94,12 @@ function renderTotalSummary(array) {
     <div class="order-items-total"><p>Order total:</p><p>$${formatCurrency(total+ tax)}</p></div>
     <button id="js-place-order-btn">Place Your Order</button>
   `;
+
+  document.querySelector("#js-place-order-btn").addEventListener("click",()=>{
+    addToOrders(cart);
+    renderTotalSummary(cart);
+    renderCartProductsGrid(cart);
+  })
 }
 renderTotalSummary(cart);
 
