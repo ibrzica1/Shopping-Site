@@ -30,3 +30,13 @@ export function addToOrders(array) {
     cart.length = 0;
   }
 }
+
+const orderCounter = document.getElementById("orderCounter");
+
+export function countOrders(array) {
+  let number = 0;
+  array.forEach(order => {
+    number++
+  })
+  orderCounter.innerHTML = number;
+}

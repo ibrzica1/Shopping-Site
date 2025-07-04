@@ -1,5 +1,5 @@
 import { cart, cartProductsCount } from "./cart-data.js";
-import { orders } from "./orders-data.js";
+import { orders, countOrders } from "./orders-data.js";
 import { products } from "../data/products.js";
 import { formatTime } from "../utils/dates.js";
 
@@ -8,6 +8,7 @@ const cartCounter = document.getElementById("cartCounter");
 const ordersGrid = document.getElementById("ordersGrid");
 
 cartProductsCount(cart);
+countOrders(orders);
 
 function renderOrdersGrid(array) {
     ordersGrid.innerHTML = "";
