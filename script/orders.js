@@ -1,5 +1,5 @@
 import { cart, cartProductsCount } from "./cart-data.js";
-import { orders, countOrders } from "./orders-data.js";
+import { orders, countOrders, removeOrder } from "./orders-data.js";
 import { products } from "../data/products.js";
 import { formatTime } from "../utils/dates.js";
 
@@ -29,6 +29,12 @@ function renderOrdersGrid(array) {
             <h2>Order ID:</h2>
             <p>${order.id}</p>
           </div>
+          <div class="cancel-icon">
+            <img src="/images/icons/cancel.png"
+            class="remove-order"
+            id="js-remove-order" 
+            data-order-id="${order.id}">
+          </div>
         </div>
         <div class="array-orders-body-container">
           <div id="orderProductsGrid${order.id}"></div>
@@ -55,6 +61,15 @@ function renderOrdersGrid(array) {
             <button class="orders-track-package" id="ordertrackPackage">Track package</button>
           </div>
         `;
+      })
+    })
+
+    document.querySelectorAll(".remove-order").forEach(button => {
+      button.addEventListener("click",()=>{
+        const orderId = parseInt(button.dataset.orderId);
+        removeOrder(orderId);
+        countOrders(orders);
+        renderOrdersGrid(orders);
       })
     })
 }

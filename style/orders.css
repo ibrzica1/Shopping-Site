@@ -89,10 +89,21 @@
   background-color: lightgray;
   padding: 10px ;
 }
+.cancel-icon img {
+  width: 30px;
+  border: 2px solid red;
+  border-radius: 4px;
+  padding: 4px;
+}
+.cancel-icon img:hover {
+  cursor: pointer;
+  background-color: rgb(187, 187, 187);
+}
 .orders-products-main-container{
   display: flex;
   justify-content: space-between;
   width: 850px;
+  height: 204px;
   background-color: white;
   padding: 40px 25px;
   border-left: 4px solid orange;
@@ -103,9 +114,13 @@
     max-height: 110px;
 }
 .orders-product-info {
+  width: 390px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+.orders-product-info h2 {
+  font-size: 20px;
 }
 .orders-product-info button {
   width: 140px;

@@ -31,6 +31,14 @@ export function addToOrders(array) {
   }
 }
 
+export function removeOrder(id) {
+  const index = orders.findIndex(order => order.id === id);
+  if (index !== -1) {
+    orders.splice(index, 1);
+    localStorage.setItem("orderItem", JSON.stringify(orders));
+  }
+}
+
 const orderCounter = document.getElementById("orderCounter");
 
 export function countOrders(array) {
