@@ -40,8 +40,21 @@
   height: 120px;
   width: 120px;
 }
-.search-lock-img{
-  margin-right: 30px;
+.return-and-orders-container button {
+  width: 120px;
+  height: 56px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(61, 69, 177);
+  color: orange;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.return-and-orders-container button:hover {
+  background-color: rgb(50, 57, 146);
 }
 .cart-body-container{
   display: flex;
