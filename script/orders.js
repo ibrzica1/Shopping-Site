@@ -1,4 +1,4 @@
-import { cart, cartProductsCount } from "./cart-data.js";
+import { cart, cartProductsCount, addToCart } from "./cart-data.js";
 import { orders, countOrders, removeOrder } from "./orders-data.js";
 import { products } from "../data/products.js";
 import { formatTime } from "../utils/dates.js";
@@ -56,11 +56,20 @@ function renderOrdersGrid(array) {
             <div class="orders-product-info">
               <h2>${matchingProduct.name}</h2>
               <p>Quantity: ${product.quantity}</p>
-              <button>Buy it again</button>
+              <button class="buy-again-button"
+              data-product-id="${matchingProduct.id}">Buy it again</button>
             </div>
             <button class="orders-track-package" id="ordertrackPackage">Track package</button>
           </div>
         `;
+      })
+    })
+
+    document.querySelectorAll(".buy-again-button").forEach(button => {
+      button.addEventListener("click",()=> {
+        const productId = button.dataset.productId;
+        addToCart(productId,1);
+        cartProductsCount(cart);
       })
     })
 

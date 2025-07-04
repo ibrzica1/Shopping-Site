@@ -133,6 +133,10 @@
   font-weight: 500;
    box-shadow: 2px 6px 8px rgba(213, 217, 217, 0.5);
 }
+.orders-product-info button:hover {
+  background-color: rgb(211, 137, 0);
+  cursor: pointer;
+}
 .orders-track-package {
   width: 220px;
   height: 36px;

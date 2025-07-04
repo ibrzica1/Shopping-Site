@@ -7,7 +7,6 @@ const cartTotalContainer = document.getElementById("cartTotalContainer");
 
 
 
-
 cartProductsCount(cart);
 
 function renderCartProductsGrid(array) {
