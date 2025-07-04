@@ -1,6 +1,7 @@
 import { cart, cartProductsCount } from "./cart-data.js";
 import { orders } from "./orders-data.js";
 import { products } from "../data/products.js";
+import { formatTime } from "../utils/dates.js";
 
 
 const cartCounter = document.getElementById("cartCounter");
@@ -17,7 +18,7 @@ function renderOrdersGrid(array) {
         <div class="array-orders-header-container">
           <div class="array-orders-time">
             <h2>Order Placed:</h2>
-            <p>${order.time}</p>
+            <p>${formatTime(order.time)}</p>
           </div>
           <div class="array-orders-total">
             <h2>Tolal:</h2>
