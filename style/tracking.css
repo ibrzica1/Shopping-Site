@@ -1,0 +1,144 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: Segoe UI;
+  box-sizing: border-box;
+}
+.tracking-main-container{
+  position: relative;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tracking-header-container{
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  width: 100%;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+.cart-logo-image{
+  height: 120px;
+  width: 120px;
+}
+.return-and-orders-container button {
+  width: 120px;
+  height: 56px;
+  border: none;
+  border-radius: 30px;
+  background-color: rgb(61, 69, 177);
+  color: orange;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.return-and-orders-container button:hover {
+  background-color: rgb(50, 57, 146);
+}
+.cart-container{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 140px;
+}
+.cart-container:hover{
+  cursor: pointer;
+}
+.cart-container img {
+  height: 70px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.cart-counter{
+  position: absolute;
+  top: 16px;
+  left: 70px;
+  font-size: 22px;
+  font-weight: 500;
+  color: red;
+}
+.tracking-body-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #3717c2, #eb8b3d);
+  margin-top: 130px;
+}
+.tracking-product-main-container {
+  background-color: white;
+  width: 800px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 4px solid orange;
+  border-radius: 8px;
+}
+.tracking-product-main-container p {
+  margin-top: 10px;
+  font-size: 16px;
+}
+.tracking-product-main-container img {
+  width: 150px;
+  margin-top: 16px;
+}
+.statuses-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 10px;
+}
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  background-color:white;
+  border: 1px solid lightgray;
+  margin-top: 16px;
+  border-radius: 20px;
+}
+.progress-bar-green {
+  position: absolute;
+  width: 5%;
+  height: 30px;
+  background-color:green;
+  border-radius: 20px;
+}
+.status-1 {
+  .progress-bar-green {
+    width: 5%;
+  }
+  .preparing {
+    color: green;
+  }
+}
+.status-2 {
+  .progress-bar-green {
+    width: 50%;
+  }
+  .shipped {
+    color: green;
+  }
+}
+.status-3 {
+  .progress-bar-green {
+    width: 100%;
+  }
+  .delivered {
+    color: green;
+  }
+}

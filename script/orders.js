@@ -2,6 +2,7 @@ import { cart, cartProductsCount, addToCart } from "./cart-data.js";
 import { orders, countOrders, removeOrder } from "./orders-data.js";
 import { products } from "../data/products.js";
 import { formatTime } from "../utils/dates.js";
+import { renderTrackingGrid } from "./tracking.js";
 
 
 const cartCounter = document.getElementById("cartCounter");
@@ -59,12 +60,24 @@ function renderOrdersGrid(array) {
               <button class="buy-again-button"
               data-product-id="${matchingProduct.id}">Buy it again</button>
             </div>
-            <button class="orders-track-package" id="ordertrackPackage">Track package</button>
+            
+            <a href="tracking.html?orderId=${order.id}&productId=${matchingProduct.id}&quantity=${product.quantity}" class="orders-track-package"
+            data-order-id="${order.id}"
+            data-product-id="${matchingProduct.id}" data-quantity="${product.quantity}">
+            Track package</a>
           </div>
         `;
       })
     })
 
+    document.querySelectorAll(".orders-track-package").forEach(button => {
+      button.addEventListener("click",()=>{
+        const orderId = parseInt(button.dataset.orderId);
+        const productId = button.dataset.productId;
+        const quantity = parseInt(button.dataset.quantity);
+      })
+    })
+  
     document.querySelectorAll(".buy-again-button").forEach(button => {
       button.addEventListener("click",()=> {
         const productId = button.dataset.productId;
